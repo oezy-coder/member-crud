@@ -1,0 +1,3 @@
+ALTER TABLE members
+    ADD COLUMN email VARCHAR(200) NOT NULL COMMENT '회원 이메일',
+    ADD COLUMN password VARCHAR(255) NOT NULL COMMENT '회원 비밀번호';

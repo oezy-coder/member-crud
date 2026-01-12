@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/crud/sql/202512011000-create-database.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/crud/sql/202512011010-create-members-table.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/crud/sql/202512241910-alter-table-members.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/crud/sql/202512310948-alter-table-members.sql" dialect="MySQL" />
+  </component>
+</project>
