@@ -3,21 +3,15 @@ package com.basic.crud.security.dto;
 public class AuthInfo {
 
     private Long memberId;
-    private String email;
     private String role;
 
-    public AuthInfo(Long memberId, String email, String role) {
+    public AuthInfo(Long memberId, String role) {
         this.memberId = memberId;
-        this.email = email;
         this.role = role;
     }
 
     public Long getMemberId() {
         return memberId;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public String getRole() {

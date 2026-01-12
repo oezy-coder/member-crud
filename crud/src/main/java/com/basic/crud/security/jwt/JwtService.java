@@ -1,6 +1,5 @@
 package com.basic.crud.security.jwt;
 
-import com.basic.crud.enums.Role;
 import com.basic.crud.security.dto.AuthInfo;
 import com.basic.crud.security.dto.UserData;
 import io.jsonwebtoken.Claims;
@@ -53,7 +52,13 @@ public class JwtService {
     }
 
     // 토큰 검증 기능
-    public AuthInfo verifyToken(String token) {
+    public AuthInfo verifyToken(String authorization) {
+
+        if (authorization == null || !authorization.startsWith("Bearer ")) {
+            throw new IllegalArgumentException("Authorization 헤더가 올바르지 않습니다.");
+        }
+
+        String token = authorization.substring(7); // "Bearer " 제거
 
         try {
             Jws<Claims> claimsJws = Jwts.parser()
@@ -64,10 +69,9 @@ public class JwtService {
             Claims claims = claimsJws.getPayload();
 
             Long memberId = Long.valueOf(claims.getSubject());
-            String email = claims.get("email", String.class);
             String role = claims.get("role", String.class);
 
-            AuthInfo authInfo = new AuthInfo(memberId, email, role);
+            AuthInfo authInfo = new AuthInfo(memberId, role);
             return authInfo;
 
         } catch (JwtException ex) {
