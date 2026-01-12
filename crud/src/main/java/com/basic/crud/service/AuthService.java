@@ -3,7 +3,6 @@ package com.basic.crud.service;
 import com.basic.crud.dto.MemberLoginRequestDto;
 import com.basic.crud.dto.MemberLoginResponseDto;
 import com.basic.crud.entity.Member;
-import com.basic.crud.enums.Role;
 import com.basic.crud.repository.MemberRepository;
 import com.basic.crud.security.dto.UserData;
 import com.basic.crud.security.jwt.JwtService;
